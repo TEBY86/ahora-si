@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
 
-const TELEGRAM_TOKEN = 'TU_TOKEN_AQUI';
+const TELEGRAM_TOKEN = '7811444781:AAHDRHGOdqZcx_ffD4iaZE6aNp1m4qaq5_k';
 const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
 
 bot.on('message', async (msg) => {
@@ -74,7 +74,8 @@ bot.on('message', async (msg) => {
   };
 
   try {
-    const response = await axios.post('URL_DE_TU_APPS_SCRIPT', postData);
+    const response = await axios.post('https://script.google.com/macros/s/AKfycbwlZUBOSU_dt-LAbftfMUxmgnYSxWf4Vghibsn8S2J_Ov8SkbF8DHO1FrqRIMl95qH0rg/exec
+', postData);
     bot.sendMessage(chatId, response.data.message || "✅ Registrado correctamente");
   } catch (err) {
     console.error("Error:", err.response?.data || err.message);
